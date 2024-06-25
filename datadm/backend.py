@@ -44,10 +44,20 @@ class BackendLLMManager():
             self.llms[llm_name]['state'] = 'loading'
             if llm_name in ['starchat-alpha-cuda', 'starchat-beta-cuda']:
                 self.llms[llm_name]['llm'] = StarChat(**self.llms[llm_name])
+            #elif llm_name in self.OPENAI_MODELS:
+            #    if 'OPENAI_API_KEY' not in os.environ:
+            #        self.llms[llm_name]['state'] = 'error'
+            #        raise RuntimeError("OPENAI_API_KEY not found in environment")
+            #    self.llms[llm_name]['llm'] = guidance.llms.OpenAI(llm_name)
+            # In the BackendLLMManager class, load method
             elif llm_name in self.OPENAI_MODELS:
                 if 'OPENAI_API_KEY' not in os.environ:
                     self.llms[llm_name]['state'] = 'error'
                     raise RuntimeError("OPENAI_API_KEY not found in environment")
+                
+                import openai
+                openai.api_base = "https://api.groq.com/openai/v1"
+                
                 self.llms[llm_name]['llm'] = guidance.llms.OpenAI(llm_name)
             else:
                 self.llms[llm_name]['state'] = 'error'
