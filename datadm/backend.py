@@ -28,7 +28,7 @@ class StarChat(guidance.llms.Transformers):
 
 
 class BackendLLMManager():
-    OPENAI_MODELS = ['gpt-3.5-turbo', 'gpt-4', 'gpt-3.5-turbo-16k', 'gpt-4-32k']
+    OPENAI_MODELS = ['llama3-70b-8192', 'gpt-3.5-turbo', 'gpt-4', 'gpt-3.5-turbo-16k', 'gpt-4-32k']
 
     def __init__(self):
         self.llms = {}
