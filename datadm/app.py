@@ -112,7 +112,7 @@ class DataSearchResultRowComponent:
             objs.append(self.component('html'))
             objs.append(self.component('url'))
         with gr.Column(scale=1, elem_id="justify_center", min_width=180):
-            objs.append(self.component('download', container=False))
+            objs.append(self.component('download'))
         events = objs[-1].click(lambda url: print(f"Downloading CSV: {url}"), objs[-2], None)
         for then_args in upload_magic_thens(objs[-2]):
             events.then(*then_args)
