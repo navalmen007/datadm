@@ -1,5 +1,7 @@
 # [dataDM](https://github.com/approximatelabs/datadm) 💬📊
 
+# with llm privders other than openai
+
 [![PyPI](https://img.shields.io/pypi/v/datadm)](https://pypi.org/project/datadm/)
 [![tests](https://github.com/approximatelabs/datadm/actions/workflows/test-build-publish.yml/badge.svg)](https://github.com/approximatelabs/datadm/actions/workflows/test-build-publish.yml)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/approximatelabs/datadm/blob/main/datadm.ipynb)
