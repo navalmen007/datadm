@@ -1,6 +1,7 @@
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import openai
+import guidance
 
 # TODO: fix this to check devices and packages to dynamically adjust available LLMs and models
 try:
