@@ -47,6 +47,7 @@ class BackendLLMManager:
                     self.llms[llm_name]['state'] = 'error'
                     raise RuntimeError("OPENAI_API_KEY not found in environment")
                 openai.api_key = os.environ['OPENAI_API_KEY']
+                openai.base_url = os.environ['OPENAI_BASE_URL']
                 self.llms[llm_name]['llm'] = openai.ChatCompletion
             else:
                 self.llms[llm_name]['state'] = 'error'
